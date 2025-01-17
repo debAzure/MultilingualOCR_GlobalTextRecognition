@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR and Translation App</title>
+</head>
+<body>
+    <h1>Upload an Image for OCR and Translation</h1>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload Image</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ image_url }}" alt="Uploaded Image" style="max-width: 400px; margin-top: 20px;">
+    {% endif %}
+
+    {% if ocr_error_message %}
+        <h3 style="color: red;">Error: {{ ocr_error_message }}</h3>
+    {% endif %}
+
+    {% if detected_text %}
+        <h3>Detected Text:</h3>
+        <pre>{{ detected_text }}</pre>
+    {% endif %}
+
+    {% if detected_language %}
+        <h3>Detected Language: {{ detected_language }}</h3>
+    {% endif %}
+
+    {% if translated_text %}
+        <h3>Translated Text:</h3>
+        <pre>{{ translated_text }}</pre>
+    {% endif %}
+</body>
+</html>

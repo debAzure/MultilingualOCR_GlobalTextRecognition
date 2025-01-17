@@ -1,0 +1,1 @@
+# MultilingualOCR_GlobalTextRecognition

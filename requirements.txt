@@ -1,0 +1,5 @@
+Flask==3.1.0
+requests==2.28.2
+python-dotenv==1.0.1
+azure-ai-translation-text==1.0.1
+azure-cognitiveservices-vision-computervision==0.9.1
